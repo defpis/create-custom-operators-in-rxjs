@@ -4,10 +4,10 @@
   "description": "Create custom operators in rxjs",
   "main": "index.js",
   "scripts": {
-    "lint": "tsc --noEmit && eslint \"**/*.ts\" --quiet --fix",
+    "lint": "tsc --noEmit && eslint ./src/**/*.ts --quiet --fix",
     "build": "tsc --build",
-    "start": "ts-node ./src",
-    "start:dist": "node ./dist"
+    "start:dev": "tsnd --respawn --transpileOnly ./src",
+    "start:prod": "node ./dist"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +21,11 @@
     "eslint-plugin-prettier": "^3.1.2",
     "prettier": "2.0.2",
     "ts-node": "^8.8.1",
+    "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.8.3"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "rxjs": "^6.5.4"
+  }
 }
